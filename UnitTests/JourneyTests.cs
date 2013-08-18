@@ -29,8 +29,8 @@ namespace UnitTests
             IPort portCapetown = _portRepository.GetPort("Cape Town");
             IPort portCasablanca = _portRepository.GetPort("Casablanca");
 
-            var invalidJourney = new Journey().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portCasablanca);
-            var validJourney = new Journey().WithPort(portBuenosAires).WithPort(portNy).WithPort(portLiverpool);
+            var invalidJourney = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portCasablanca);
+            var validJourney = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portNy).WithPort(portLiverpool);
 
             Assert.IsFalse(invalidJourney.IsValid(_routeRepository));
             Assert.IsTrue(validJourney.IsValid(_routeRepository));
@@ -45,12 +45,12 @@ namespace UnitTests
             IPort portCasablanca = _portRepository.GetPort("Casablanca");
             IPort portCapetown = _portRepository.GetPort("Cape Town");
 
-            var journey = new Journey().WithPort(portBuenosAires).WithPort(portNy).WithPort(portLiverpool);
+            var journey = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portNy).WithPort(portLiverpool);
             //var invalidjourney = new Journey(_routeRepository).WithPort(portBuenosAires).WithPort(portNy).WithPort(portCapetown);
 
-            var journey2 = new Journey().WithPort(portBuenosAires).WithPort(portCasablanca).WithPort(portLiverpool);
-            var journey3 = new Journey().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portNy).WithPort(portLiverpool).WithPort(portCasablanca);
-            var invalidjourney = new Journey().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portCasablanca);
+            var journey2 = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCasablanca).WithPort(portLiverpool);
+            var journey3 = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portNy).WithPort(portLiverpool).WithPort(portCasablanca);
+            var invalidjourney = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portCasablanca);
 
             
             Assert.That(journey.GetTime(_routeRepository), Is.EqualTo(10));

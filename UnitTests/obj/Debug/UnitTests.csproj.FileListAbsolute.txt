@@ -196,3 +196,15 @@ Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\UnitTests\bin\Debug\nunit.framewor
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\UnitTests\obj\Debug\UnitTests.dll
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\FluentAssertions.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\nunit.framework.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\FluentAssertions.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\FluentAssertions.xml
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\bin\Debug\nunit.framework.xml
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\obj\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\UnitTests\obj\Debug\UnitTests.pdb

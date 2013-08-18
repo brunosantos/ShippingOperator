@@ -83,3 +83,8 @@ Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\TransportOperatorBusiness\bin\Debu
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV5\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb

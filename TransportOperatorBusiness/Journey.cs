@@ -4,32 +4,48 @@ using System.Linq;
 
 namespace TransportOperatorBusiness
 {
-    public interface IJourney : ICloneable
+    public interface IJourney<TNode> : ICloneable
     {
-        Journey WithPort(IPort port);
+        Journey<TNode> WithPort(TNode port);
         int GetTime(IRouteRepository routeRepository);
         bool IsValid(IRouteRepository routeRepository);
         int NumberOfStops();
+        List<TNode> Ports { get; }
     }
 
     //maybe the journey should have routes instead of ports. and should throw exception if route added was invalid?
     //it would be easier to get totaltime because we wouldn't have to call repository for that...
-    public class Journey : IJourney
+    public class Journey<TNode> : IJourney<TNode>
     {
-        private List<IPort> _ports;
+        private List<TNode> _ports;
 
         public Journey()
         {
-            _ports = new List<IPort>();
+            _ports = new List<TNode>();
         }
-        public Journey(IRoute<IPort> route)
+        public Journey(IRoute<TNode> route)
         {
-            _ports = new List<IPort>() { route.Origin, route.Destination};            
+            _ports = new List<TNode>() { route.Origin, route.Destination };            
         }
 
-        public Journey WithPort(IPort port)
+        public Journey(IEnumerable<IRoute<TNode>> route)
         {
-            _ports.Add(port);
+            _ports = route.Select(x => x.Origin).ToList();
+        }
+
+        public Journey(IJourney<IPort> route)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<TNode> Ports
+        {
+            get { return _ports; }
+        }
+
+        public Journey<TNode> WithPort(TNode port)
+        {
+            Ports.Add(port);
             return this;
         }
 
@@ -39,18 +55,18 @@ namespace TransportOperatorBusiness
             int tcount = 0;
             if (IsValid(routeRepository))
             {
-                //TODO Refactor This -should I look twice?!?! what about single responsability?
-                for (int i = 0; i < _ports.Count - 1; ++i)
+                //TODO Refactor This -should I look twice?!?! what about single responsibility?
+                for (int i = 0; i < Ports.Count - 1; ++i)
                 {
-                    tcount += GetTime(_ports[i], _ports[i + 1], routeRepository);
+                    tcount += GetTime(Ports[i], Ports[i + 1], routeRepository);
                 }
             }
             return tcount;
         }
 
-        private int GetTime(IPort portOrigin, IPort portDestination, IRouteRepository routeRepository)
+        private int GetTime(TNode portOrigin, TNode portDestination, IRouteRepository routeRepository)
         {
-            return routeRepository.GetRouteTime(portOrigin, portDestination);
+            return routeRepository.GetRouteTime<TNode>(portOrigin, portDestination);
         }
 
         public bool IsValid(IRouteRepository routeRepository)
@@ -58,9 +74,9 @@ namespace TransportOperatorBusiness
             if (HasMoreThanTwoPorts())
             {
                 //TODO Refactor This
-                for (int i = 0; i < _ports.Count - 1; ++i)
+                for (int i = 0; i < Ports.Count - 1; ++i)
                 {
-                    if (!IsValid(_ports[i], _ports[i + 1], routeRepository))
+                    if (!IsValid(Ports[i], Ports[i + 1], routeRepository))
                         return false;
                 }
             }
@@ -71,26 +87,26 @@ namespace TransportOperatorBusiness
 
         public int NumberOfStops()
         {
-            return _ports.Count == 0 ? 0 : _ports.Count-1;
+            return Ports.Count == 0 ? 0 : Ports.Count-1;
         }
 
         private bool HasMoreThanTwoPorts()
         {
-            return _ports.Count >= 2;
+            return Ports.Count >= 2;
         }
 
-        private bool IsValid(IPort portOrigin, IPort portDestination, IRouteRepository routeRepository)
+        private bool IsValid(TNode portOrigin, TNode portDestination, IRouteRepository routeRepository)
         {
             //can whe find a route that matches this?
             //it would be nice if I could just create a route and do contains on routes...
-            return routeRepository.IsValidRoute(portOrigin, portDestination);
+            return routeRepository.IsValidRoute<TNode>(portOrigin, portDestination);
         }
 
         public object Clone()
         {
-            var clone = new Journey {_ports = new List<IPort>()};
-            foreach (var port in _ports)
-                clone._ports.Add(port);
+            var clone = new Journey<TNode> { _ports = new List<TNode>() };
+            foreach (var port in Ports)
+                clone.Ports.Add(port);
             
             return clone;
         }

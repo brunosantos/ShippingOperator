@@ -6,7 +6,9 @@ namespace TransportOperatorBusiness
     {
         List<IRoute<IPort>> GetAllRoutes();
         bool IsValidRoute(IPort portOrigin, IPort portDestination);
+        bool IsValidRoute<TNode>(TNode portOrigin, TNode portDestination);
         int GetRouteTime(IPort portOrigin, IPort portDestination);
+        int GetRouteTime<TNode>(TNode portOrigin, TNode portDestination);
     }
 
     public class RouteRepository : IRouteRepository
@@ -45,7 +47,17 @@ namespace TransportOperatorBusiness
             return _routes.Exists(x => x.Origin.Equals(portOrigin) && x.Destination.Equals(portDestination));
         }
 
+        public bool IsValidRoute<TNode>(TNode portOrigin, TNode portDestination)
+        {
+            return _routes.Exists(x => x.Origin.Equals(portOrigin) && x.Destination.Equals(portDestination));
+        }
+
         public int GetRouteTime(IPort portOrigin, IPort portDestination)
+        {
+            return _routes.Find(x => x.Origin.Equals(portOrigin) && x.Destination.Equals(portDestination)).RouteTimeInDays;
+        }
+
+        public int GetRouteTime<TNode>(TNode portOrigin, TNode portDestination)
         {
             return _routes.Find(x => x.Origin.Equals(portOrigin) && x.Destination.Equals(portDestination)).RouteTimeInDays;
         }
