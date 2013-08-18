@@ -1,0 +1,65 @@
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb

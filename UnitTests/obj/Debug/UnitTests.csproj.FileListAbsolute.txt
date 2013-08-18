@@ -1,0 +1,150 @@
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bsan\Documents\Visual Studio 2012\Projects\HCUK CodingChallenge\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge\HCUK CodingChallenge\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\nunit.framework.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\nunit.framework.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\obj\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\FluentAssertions.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\FluentAssertions.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V2\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V3\HCUK CodingChallenge V3\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\FluentAssertions.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\nunit.framework.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\FluentAssertions.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\FluentAssertions.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\nunit.framework.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\obj\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V4 - After refactorings\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V4 - After refactorings\HCUK CodingChallenge V4 - After refactorings\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\FluentAssertions.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\nunit.framework.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\FluentAssertions.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\FluentAssertions.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\bin\Debug\nunit.framework.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\obj\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V5 - trying BFS\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\nunit.framework.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\nunit.framework.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V7\HCUK CodingChallenge V6 - trying BFS\UnitTests\obj\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\UnitTests.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\FluentAssertions.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\nunit.framework.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\FluentAssertions.pdb
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\FluentAssertions.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\nunit.framework.xml
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\obj\Debug\UnitTests.dll
+Z:\DropBox\Dropbox\HC Test\HCUK CodingChallenge V8 - some refactorings\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Downloads\HCUK CodingChallenge V8 - some refactorings\HCUK CodingChallenge V8 - some refactorings\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\UnitTests\obj\Debug\UnitTests.pdb
