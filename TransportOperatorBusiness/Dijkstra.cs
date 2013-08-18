@@ -137,12 +137,12 @@ namespace TransportOperatorBusiness
             {
                 var currentRoute = routeDictionary[node];
 
-                if (currentRoute.NumberOfStops() > 0 ||
+                if ((currentRoute.NumberOfStops() > 0 && shortestJourney == null) ||
                     shortestJourney != null && shortestJourney.GetTime(routeRepository) > currentRoute.GetTime(routeRepository))
                 {
                     //currentRoute.Add(routes.Single(r => r.Origin.Equals(node) && r.Destination.Equals(source)));
                     currentRoute.WithPort(source);
-                    shortestJourney = currentRoute;
+                    shortestJourney = currentRoute.Clone() as IJourney<IPort>;
                 }
             }
             return shortestJourney;
@@ -203,7 +203,9 @@ namespace TransportOperatorBusiness
             SetInfinityToAllRoutes(routes, shortestRoutes);
 
             // update cost for self-to-self as 0; no Route
-            shortestRoutes.Set(source, 0, null);
+            //shortestRoutes.Set(source, 0, null);
+            shortestRoutes[source] = new KeyValuePair<int, IJourney<IPort>>(0, new Journey<IPort>().WithPort(source));
+
 
             var locationCount = shortestRoutes.Keys.Count;
 
@@ -219,10 +221,14 @@ namespace TransportOperatorBusiness
                 {
                     if (shortestRoutes[route.Destination].Key > route.RouteTimeInDays + shortestRoutes[route.Origin].Key)
                     {
-                        shortestRoutes.Set(
-                            route.Destination,
-                            route.RouteTimeInDays + shortestRoutes[route.Origin].Key,
-                            shortestRoutes[route.Origin].Value.WithPort(route.Destination));
+                        //shortestRoutes.Set(
+                        //    route.Destination,
+                        //    route.RouteTimeInDays + shortestRoutes[route.Origin].Key,
+                        //    shortestRoutes[route.Origin].Value.WithPort(route.Destination));
+                        var journey = ((IJourney<IPort>)shortestRoutes[route.Origin].Value.Clone()).WithPort(route.Destination);
+                        var completeRoute = journey ?? new Journey<IPort>();
+                        shortestRoutes[route.Destination] = new KeyValuePair<int, IJourney<IPort>>(route.RouteTimeInDays + shortestRoutes[route.Origin].Key, completeRoute);
+
                     }
                 }
 
