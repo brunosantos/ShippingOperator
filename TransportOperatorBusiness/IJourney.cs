@@ -5,7 +5,7 @@ namespace TransportOperatorBusiness
 {
     public interface IJourney<TNode> : ICloneable
     {
-        Journey<TNode> WithPort(TNode port);
+        IJourney<TNode> WithPort(TNode port);
         int GetTime(IRouteRepository<TNode> routeRepository);
         bool IsValid(IRouteRepository<TNode> routeRepository);
         int NumberOfStops();

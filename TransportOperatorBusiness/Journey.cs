@@ -29,7 +29,7 @@ namespace TransportOperatorBusiness
             get { return _ports; }
         }
 
-        public Journey<TNode> WithPort(TNode port)
+        public IJourney<TNode> WithPort(TNode port)
         {
             Ports.Add(port);
             return this;
