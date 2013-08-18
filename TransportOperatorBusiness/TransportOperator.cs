@@ -7,7 +7,7 @@ namespace TransportOperatorBusiness
     {
         private readonly IRouteRepository<IPort> _routeRepository;
         private readonly IPortRepository<IPort> _portRepository;
-        private Graph _graph;
+        private Graph<IPort> _graph;
 
         public List<IRoute<IPort>> Routes
         {
@@ -21,7 +21,7 @@ namespace TransportOperatorBusiness
         {
             _routeRepository = routeRepository;
             _portRepository = portRepository;
-            _graph = new Graph(routeRepository);
+            _graph = new Graph<IPort>(routeRepository);
         }
 
         public int GetNumberOfRoutesBetweenPortsWithNumberOfStops(IPort source, IPort destination, int numberOfStops)

@@ -24,11 +24,6 @@ namespace TransportOperatorBusiness
             _ports = route.Select(x => x.Origin).ToList();
         }
 
-        public Journey(IJourney<IPort> route)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<TNode> Ports
         {
             get { return _ports; }
@@ -40,7 +35,7 @@ namespace TransportOperatorBusiness
             return this;
         }
 
-        public int GetTime(IRouteRepository<IPort> routeRepository)
+        public int GetTime(IRouteRepository<TNode> routeRepository)
         {
             //assume invalid journey time is 0
             int tcount = 0;
@@ -55,12 +50,12 @@ namespace TransportOperatorBusiness
             return tcount;
         }
 
-        private int GetTime(TNode portOrigin, TNode portDestination, IRouteRepository<IPort> routeRepository)
+        private int GetTime(TNode portOrigin, TNode portDestination, IRouteRepository<TNode> routeRepository)
         {
-            return routeRepository.GetRouteTime((IPort) portOrigin, (IPort) portDestination);
+            return routeRepository.GetRouteTime(portOrigin, portDestination);
         }
 
-        public bool IsValid(IRouteRepository<IPort> routeRepository)
+        public bool IsValid(IRouteRepository<TNode> routeRepository)
         {
             if (HasMoreThanTwoPorts())
             {
@@ -86,11 +81,11 @@ namespace TransportOperatorBusiness
             return Ports.Count >= 2;
         }
 
-        private bool IsValid(TNode portOrigin, TNode portDestination, IRouteRepository<IPort> routeRepository)
+        private bool IsValid(TNode portOrigin, TNode portDestination, IRouteRepository<TNode> routeRepository)
         {
             //can whe find a route that matches this?
             //it would be nice if I could just create a route and do contains on routes...
-            return routeRepository.IsValidRoute((IPort) portOrigin, (IPort) portDestination);
+            return routeRepository.IsValidRoute(portOrigin, portDestination);
         }
 
         public object Clone()
