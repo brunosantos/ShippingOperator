@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dijkstra.cs" />
+    <Compile Include="Graph.cs" />
+    <Compile Include="IJourney.cs" />
     <Compile Include="IPortRepository.cs" />
     <Compile Include="IRoute.cs" />
     <Compile Include="Journey.cs" />

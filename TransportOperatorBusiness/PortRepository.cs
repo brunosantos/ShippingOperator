@@ -2,30 +2,23 @@
 
 namespace TransportOperatorBusiness
 {
-    public class PortRepository : IPortRepository
+    public class PortRepository<TNode> : IPortRepository<TNode>
     {
-        private readonly List<IPort> _ports;
+        private readonly List<TNode> _ports;
 
-        public PortRepository()
+        public PortRepository(List<TNode> ports)
         {
-            _ports = new List<IPort>()
-                         {
-                             new Port("New York"),
-                             new Port("Liverpool"),
-                             new Port("Casablanca"),
-                             new Port("Buenos Aires"),
-                             new Port("Cape Town")
-                         };
+            _ports = ports;
         }
 
-        public List<IPort> GetAllPorts()
+        public List<TNode> GetAllPorts()
         {
             return _ports;
         }
 
-        public IPort GetPort(string portName)
+        public TNode GetPort(string portName)
         {
-            return _ports.Find(x => x.Name == portName);
+            return _ports.Find(x => x.GetType().GetProperty("Name").GetValue(x).Equals(portName));
         }
     }
 }

@@ -220,3 +220,15 @@ Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Jou
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Journey\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Journey\UnitTests\obj\Debug\UnitTests.dll
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Journey\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.pdb

@@ -2,9 +2,9 @@
 
 namespace TransportOperatorBusiness
 {
-    public interface IPortRepository
+    public interface IPortRepository<TNode>
     {
-        List<IPort> GetAllPorts();
-        IPort GetPort(string portName);
+        List<TNode> GetAllPorts();
+        TNode GetPort(string portName);
     }
 }

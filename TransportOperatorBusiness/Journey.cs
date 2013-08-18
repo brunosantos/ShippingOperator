@@ -4,15 +4,6 @@ using System.Linq;
 
 namespace TransportOperatorBusiness
 {
-    public interface IJourney<TNode> : ICloneable
-    {
-        Journey<TNode> WithPort(TNode port);
-        int GetTime(IRouteRepository routeRepository);
-        bool IsValid(IRouteRepository routeRepository);
-        int NumberOfStops();
-        List<TNode> Ports { get; }
-    }
-
     //maybe the journey should have routes instead of ports. and should throw exception if route added was invalid?
     //it would be easier to get totaltime because we wouldn't have to call repository for that...
     public class Journey<TNode> : IJourney<TNode>
@@ -49,7 +40,7 @@ namespace TransportOperatorBusiness
             return this;
         }
 
-        public int GetTime(IRouteRepository routeRepository)
+        public int GetTime(IRouteRepository<IPort> routeRepository)
         {
             //assume invalid journey time is 0
             int tcount = 0;
@@ -64,12 +55,12 @@ namespace TransportOperatorBusiness
             return tcount;
         }
 
-        private int GetTime(TNode portOrigin, TNode portDestination, IRouteRepository routeRepository)
+        private int GetTime(TNode portOrigin, TNode portDestination, IRouteRepository<IPort> routeRepository)
         {
-            return routeRepository.GetRouteTime<TNode>(portOrigin, portDestination);
+            return routeRepository.GetRouteTime((IPort) portOrigin, (IPort) portDestination);
         }
 
-        public bool IsValid(IRouteRepository routeRepository)
+        public bool IsValid(IRouteRepository<IPort> routeRepository)
         {
             if (HasMoreThanTwoPorts())
             {
@@ -95,11 +86,11 @@ namespace TransportOperatorBusiness
             return Ports.Count >= 2;
         }
 
-        private bool IsValid(TNode portOrigin, TNode portDestination, IRouteRepository routeRepository)
+        private bool IsValid(TNode portOrigin, TNode portDestination, IRouteRepository<IPort> routeRepository)
         {
             //can whe find a route that matches this?
             //it would be nice if I could just create a route and do contains on routes...
-            return routeRepository.IsValidRoute<TNode>(portOrigin, portDestination);
+            return routeRepository.IsValidRoute((IPort) portOrigin, (IPort) portDestination);
         }
 
         public object Clone()

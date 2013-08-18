@@ -9,14 +9,23 @@ namespace UnitTests
     public class Tests
     {
         private TransportOperator _transportOperator;
-        private IPortRepository _portRepository;
-        private IRouteRepository _routeRepository;
+        private IPortRepository<IPort> _portRepository;
+        private IRouteRepository<IPort> _routeRepository;
 
         [SetUp]
         public void Setup()
         {
-            _portRepository = new PortRepository();
-            _routeRepository = new RouteRepository(_portRepository); 
+            var ports = new List<IPort>()
+                         {
+                             new Port("New York"),
+                             new Port("Liverpool"),
+                             new Port("Casablanca"),
+                             new Port("Buenos Aires"),
+                             new Port("Cape Town")
+                         };
+
+            _portRepository = new PortRepository<IPort>(ports);
+            _routeRepository = new RouteRepository<IPort>(_portRepository); 
             _transportOperator = new TransportOperator(_routeRepository,_portRepository);
             
         }
@@ -53,7 +62,7 @@ namespace UnitTests
         //    IPort portLiverpool = _portRepository.GetPort("Liverpool");
         //    IPort portCasablanca = _portRepository.GetPort("Casablanca");
 
-        //    var results = Dijkstra.GetShortestRoute(portBuenosAires, portLiverpool,
+        //    var results = Graph.GetShortestRoute(portBuenosAires, portLiverpool,
         //                                                          _routeRepository.GetAllRoutes());
 
         //    Assert.That(results.Sum(r => r.RouteTimeInDays), Is.EqualTo(8));
@@ -73,7 +82,7 @@ namespace UnitTests
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
             IPort portCapetown = _portRepository.GetPort("Cape Town");
 
-            var results = Dijkstra.GetShortestRoute(portNy, portNy, _routeRepository.GetAllRoutes());
+            var results = _transportOperator.GetShortestRoute(portNy, portNy);
 
             Assert.That(results.GetTime(_routeRepository), Is.EqualTo(18));
             Assert.That(results.NumberOfStops(), Is.EqualTo(3));
@@ -91,7 +100,7 @@ namespace UnitTests
         //    IPort portLiverpool = _portRepository.GetPort("Liverpool");
         //    IPort portCasablanca = _portRepository.GetPort("Casablanca");
 
-        //    var results = Dijkstra.GetShortestRoute(portLiverpool, portLiverpool, _routeRepository.GetAllRoutes());
+        //    var results = Graph.GetShortestRoute(portLiverpool, portLiverpool, _routeRepository.GetAllRoutes());
 
         //    Assert.That(results.Sum(r => r.RouteTimeInDays), Is.EqualTo(6));
         //    Assert.That(results.Count, Is.EqualTo(2));
@@ -111,7 +120,7 @@ namespace UnitTests
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
             IPort portCasablanca = _portRepository.GetPort("Casablanca");
 
-            var results = Dijkstra.GetShortestRoute(portLiverpool, portLiverpool, _routeRepository.GetAllRoutes());
+            var results = _transportOperator.GetShortestRoute(portLiverpool, portLiverpool);
 
             Assert.That(results.GetTime(_routeRepository), Is.EqualTo(6));
             Assert.That(results.NumberOfStops(), Is.EqualTo(2));
@@ -125,7 +134,7 @@ namespace UnitTests
         public void ShouldGetNumberOfJourneysFromLiverpoolToLiverpoolWithMaxNumberOfThreeStops()
         {
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
-            var numberOfRoutes = Dijkstra.GetNumberOfRoutesBetweenPortsWithMaximumNumberOfStops(portLiverpool, portLiverpool, _routeRepository.GetAllRoutes(), 3);
+            var numberOfRoutes = _transportOperator.GetNumberOfRoutesBetweenPortsWithMaximumNumberOfStops(portLiverpool, portLiverpool, 3);
             Assert.That(numberOfRoutes, Is.EqualTo(2));
         }
 
@@ -134,7 +143,7 @@ namespace UnitTests
         {
             IPort portBuenosAires = _portRepository.GetPort("Buenos Aires");
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
-            var results = Dijkstra.GetNumberOfRoutesBetweenPortsWithNumberOfStops(portBuenosAires, portLiverpool, _routeRepository.GetAllRoutes(), 4);
+            var results = _transportOperator.GetNumberOfRoutesBetweenPortsWithNumberOfStops(portBuenosAires, portLiverpool,  4);
 
             Assert.That(results, Is.EqualTo(1));
         }
@@ -143,8 +152,7 @@ namespace UnitTests
         public void ShouldGetNumberOfJourneysFromLiverpoolToLiverpoolWithJourneyTimeEqualOrLessThanTwentyFive()
         {
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
-            var results = Dijkstra.GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(portLiverpool, portLiverpool, 
-                _routeRepository.GetAllRoutes(), 25);
+            var results = _transportOperator.GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(portLiverpool, portLiverpool, 25);
 
             Assert.That(results, Is.EqualTo(3));
         }      

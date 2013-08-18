@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NUnit.Framework;
 using TransportOperatorBusiness;
 
@@ -8,14 +9,23 @@ namespace UnitTests
     {
         private TransportOperator _transportOperator;
         //private readonly RouteTests _routeTests = new RouteTests();
-        private IPortRepository _portRepository;
-        private IRouteRepository _routeRepository;
+        private IPortRepository<IPort> _portRepository;
+        private IRouteRepository<IPort> _routeRepository;
 
         [SetUp]
         public void Setup()
         {
-            _portRepository = new PortRepository();
-            _routeRepository = new RouteRepository(_portRepository);
+            var ports = new List<IPort>()
+                         {
+                             new Port("New York"),
+                             new Port("Liverpool"),
+                             new Port("Casablanca"),
+                             new Port("Buenos Aires"),
+                             new Port("Cape Town")
+                         };
+
+            _portRepository = new PortRepository<IPort>(ports);
+            _routeRepository = new RouteRepository<IPort>(_portRepository);
             _transportOperator = new TransportOperator(_routeRepository, _portRepository);
 
         }

@@ -93,3 +93,8 @@ Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Jou
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Journey\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Journey\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
 Z:\DropBox\Dropbox\HC Test\ShippingOperatorV6 -lixei td ao mudar de list pra Journey\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
