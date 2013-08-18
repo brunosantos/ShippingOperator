@@ -6,7 +6,7 @@ namespace UnitTests
     [TestFixture]
     public class JourneyTests
     {
-        private TransportOperatorBuilder _transportOperatorBuilder;
+        private TransportOperator _transportOperator;
         //private readonly RouteTests _routeTests = new RouteTests();
         private IPortRepository _portRepository;
         private IRouteRepository _routeRepository;
@@ -16,7 +16,7 @@ namespace UnitTests
         {
             _portRepository = new PortRepository();
             _routeRepository = new RouteRepository(_portRepository);
-            _transportOperatorBuilder = new TransportOperatorBuilder(_routeRepository, _portRepository);
+            _transportOperator = new TransportOperator(_routeRepository, _portRepository);
 
         }
 

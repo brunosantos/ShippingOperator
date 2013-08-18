@@ -22,7 +22,7 @@ namespace TransportOperatorBusiness
         {
             _ports = new List<IPort>();
         }
-        public Journey(IRoute route)
+        public Journey(IRoute<IPort> route)
         {
             _ports = new List<IPort>() { route.Origin, route.Destination};            
         }
@@ -88,9 +88,7 @@ namespace TransportOperatorBusiness
 
         public object Clone()
         {
-            //var other = (Journey)this.MemberwiseClone();
-            var clone = new Journey();
-            clone._ports = new List<IPort>();
+            var clone = new Journey {_ports = new List<IPort>()};
             foreach (var port in _ports)
                 clone._ports.Add(port);
             

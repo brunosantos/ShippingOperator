@@ -4,7 +4,7 @@ namespace TransportOperatorBusiness
 {
     public interface IRouteRepository
     {
-        List<IRoute> GetAllRoutes();
+        List<IRoute<IPort>> GetAllRoutes();
         bool IsValidRoute(IPort portOrigin, IPort portDestination);
         int GetRouteTime(IPort portOrigin, IPort portDestination);
     }
@@ -12,30 +12,30 @@ namespace TransportOperatorBusiness
     public class RouteRepository : IRouteRepository
     {
         private readonly IPortRepository _portRepository;
-        private readonly List<IRoute> _routes;
+        private readonly List<IRoute<IPort>> _routes;
         public RouteRepository(IPortRepository portRepository)
         {
             _portRepository = portRepository;
-            _routes = new List<IRoute>
+            _routes = new List<IRoute<IPort>>
                 {
-                    new Route(GetPort("Buenos Aires"), GetPort("New York"), 6),
-                    new Route(GetPort("Buenos Aires"), GetPort("Casablanca"), 5),
-                    new Route(GetPort("Buenos Aires"), GetPort("Cape Town"), 4),
-                    new Route(GetPort("New York"), GetPort("Liverpool"), 4),
-                    new Route(GetPort("Liverpool"), GetPort("Casablanca"), 3),
-                    new Route(GetPort("Liverpool"), GetPort("Cape Town"), 6),
-                    new Route(GetPort("Casablanca"), GetPort("Liverpool"), 3),
-                    new Route(GetPort("Casablanca"), GetPort("Cape Town"), 6),
-                    new Route(GetPort("Cape Town"), GetPort("New York"), 8)
+                    new Route<IPort>(GetPort("Buenos Aires"), GetPort("New York"), 6),
+                    new Route<IPort>(GetPort("Buenos Aires"), GetPort("Casablanca"), 5),
+                    new Route<IPort>(GetPort("Buenos Aires"), GetPort("Cape Town"), 4),
+                    new Route<IPort>(GetPort("New York"), GetPort("Liverpool"), 4),
+                    new Route<IPort>(GetPort("Liverpool"), GetPort("Casablanca"), 3),
+                    new Route<IPort>(GetPort("Liverpool"), GetPort("Cape Town"), 6),
+                    new Route<IPort>(GetPort("Casablanca"), GetPort("Liverpool"), 3),
+                    new Route<IPort>(GetPort("Casablanca"), GetPort("Cape Town"), 6),
+                    new Route<IPort>(GetPort("Cape Town"), GetPort("New York"), 8)
                 };
         }
 
-        protected List<IRoute> Routes
+        protected List<IRoute<IPort>> Routes
         {
             get { return _routes; }            
         }
 
-        public List<IRoute> GetAllRoutes()
+        public List<IRoute<IPort>> GetAllRoutes()
         {
             return _routes;
         }

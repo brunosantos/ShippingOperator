@@ -18,11 +18,10 @@ namespace UnitTests
         [Test]
         public void ShouldHaveARouteWithOriginAndDestination()
         {
-            //Origin and Dest should be enough to have a direction
             var portOrigin = new Port("Cape Town");
             var portDestination = new Port("New York");
 
-            IRoute route = new Route(portOrigin, portDestination,  1);
+            IRoute<IPort> route = new Route<IPort>(portOrigin, portDestination,  1);
 
             Assert.That(route.Origin.Name, Is.EqualTo("Cape Town"));
             Assert.That(route.Destination.Name, Is.EqualTo("New York"));
@@ -35,8 +34,8 @@ namespace UnitTests
             var portDestination = new Port("New York");
             var routeTimeInDays = 5;
 
-            IRoute route = new Route(portOrigin, portDestination, routeTimeInDays);
-            IRoute route2 = new Route(portOrigin, portDestination, 7);
+            IRoute<IPort> route = new Route<IPort>(portOrigin, portDestination, routeTimeInDays);
+            IRoute<IPort> route2 = new Route<IPort>(portOrigin, portDestination, 7);
 
             Assert.That(route.RouteTimeInDays, Is.EqualTo(5));
             Assert.That(route2.RouteTimeInDays, Is.EqualTo(7));

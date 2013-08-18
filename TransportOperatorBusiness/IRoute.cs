@@ -1,9 +1,9 @@
 ﻿namespace TransportOperatorBusiness
 {
-    public interface IRoute
+    public interface IRoute<TNode>
     {
-        IPort Origin { get; }
-        IPort Destination { get; }
+        TNode Origin { get; }
+        TNode Destination { get; }
         int RouteTimeInDays { get; }
     }
 }
