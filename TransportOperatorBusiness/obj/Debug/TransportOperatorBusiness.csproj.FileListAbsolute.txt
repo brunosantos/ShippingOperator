@@ -63,3 +63,13 @@ C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\Transpo
 C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
 C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
 C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Downloads\ShippingOperator\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Downloads\ShippingOperator\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bsan\Downloads\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bsan\Downloads\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bsan\Downloads\ShippingOperator\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV2\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV2\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV2\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV2\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+Z:\DropBox\Dropbox\HC Test\ShippingOperatorV2\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb

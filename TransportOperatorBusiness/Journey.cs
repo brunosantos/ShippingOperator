@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TransportOperatorBusiness
 {
-    public interface IJourney
+    public interface IJourney : ICloneable
     {
         Journey WithPort(IPort port);
         int GetTime(IRouteRepository routeRepository);
         bool IsValid(IRouteRepository routeRepository);
+        int NumberOfStops();
     }
 
     //maybe the journey should have routes instead of ports. and should throw exception if route added was invalid?
@@ -67,6 +69,11 @@ namespace TransportOperatorBusiness
             return true;
         }
 
+        public int NumberOfStops()
+        {
+            return _ports.Count == 0 ? 0 : _ports.Count-1;
+        }
+
         private bool HasMoreThanTwoPorts()
         {
             return _ports.Count >= 2;
@@ -79,5 +86,15 @@ namespace TransportOperatorBusiness
             return routeRepository.IsValidRoute(portOrigin, portDestination);
         }
 
+        public object Clone()
+        {
+            //var other = (Journey)this.MemberwiseClone();
+            var clone = new Journey();
+            clone._ports = new List<IPort>();
+            foreach (var port in _ports)
+                clone._ports.Add(port);
+            
+            return clone;
+        }
     }
 }

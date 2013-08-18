@@ -5,9 +5,9 @@
         string Name { get; }
     }
 
-    public class Port : IPort
+    public struct Port : IPort
     {
-        private string _name;
+        private readonly string _name;
 
         public Port(string name)
         {

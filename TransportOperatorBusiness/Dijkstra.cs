@@ -19,18 +19,30 @@ namespace TransportOperatorBusiness
 
         public static int GetNumberOfRoutesBetweenPortsWithMaximumNumberOfStops(IPort source, IPort destination, List<IRoute> routes, int maxNumberOfStops)
         {
-            var result1 = BreadthFirstSearchRoutesWithRepetition(source, routes, maxNumberOfStops);
+            var bfsRoutes = BreadthFirstSearchRoutesWithPortRepetition(source, routes, maxNumberOfStops);
             int numberOfRoutes = 0;
 
-            if (result1.Count < maxNumberOfStops)
-                maxNumberOfStops = result1.Count-1;
+            if (bfsRoutes.Count < maxNumberOfStops)
+                maxNumberOfStops = bfsRoutes.Count-1;
             for (int i = maxNumberOfStops; i >= 0; --i)
             {
-                var x = result1[i].Count(r => r.Destination == destination);
-                numberOfRoutes += x;
+                var numberOfRoutesWithSameDestination = bfsRoutes[i].Count(r => r.Destination == destination);
+                numberOfRoutes += numberOfRoutesWithSameDestination;               
             }
 
-            return numberOfRoutes; //routeDictionary.Values.ToList().FindAll(r => r.Count <= maxNumberOfStops && r.Count > 0);
+            return numberOfRoutes; 
+        }
+
+        public static int GetNumberOfRoutesBetweenPortsWithMaximumNumberOfStopsv2(IPort source, IPort destination, List<IRoute> routes, int maxNumberOfStops)
+        {
+            var bfsRoutes = BreadthFirstSearchRoutesWithPortRepetitionv2(source, destination, routes, maxNumberOfStops);
+            return bfsRoutes.Count(x => x.NumberOfStops() <= maxNumberOfStops);
+        }
+
+        public static int GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(IPort source, IPort destination, List<IRoute> routes, int maxJourneytime)
+        {
+            var bfsRoutes = BreadthFirstSearchRoutesWithPortRepetition(source, destination, routes, maxJourneytime);
+            return bfsRoutes.Count();
         }
 
         public static IEnumerable<IEnumerable<IPort>> BreadthFirstSearch(IPort start, IPort end, List<IRoute> routes)
@@ -82,7 +94,6 @@ namespace TransportOperatorBusiness
         public static Dictionary<int, List<IRoute>> BreadthFirstSearchRoutes(IPort start, List<IRoute> routes, int maxNumberOfLevels)
         {
             //Dictionary is zero based.
-            //maxNumberOfLevels -= 1;
             var routesPerLevel = new Dictionary<int, List<IRoute>>();   
             int level = 0;
 
@@ -91,7 +102,6 @@ namespace TransportOperatorBusiness
             while (queue.Count != 0)
             {
                 var currentNode = queue.Dequeue();
-                //if (maxNumberOfLevels == 0 || currentNode.Value == end)
                 if (maxNumberOfLevels == 0 && queue.Count == 0 || currentNode.Key > maxNumberOfLevels)
                 {
                     return routesPerLevel;
@@ -117,64 +127,7 @@ namespace TransportOperatorBusiness
                 ++level;
             }            
             return routesPerLevel;
-        }
-
-        public static Dictionary<int, List<IRoute>> BreadthFirstSearchRoutess(IPort start, IPort end, List<IRoute> routes, int level, int numberOfLevels)
-        {
-            var routesPerLevel = new Dictionary<int, List<IRoute>>();            
-
-            var queue = new Queue<IPort>();
-            queue.Enqueue(start);
-            while (queue.Count != 0)
-            {
-                var currentNode = queue.Dequeue();
-                //visitedNodes.Add(currentNode);
-
-                if (numberOfLevels == 0 || currentNode == end)
-                {
-                    return routesPerLevel;
-                }
-
-                var visitedRoutes = new List<IRoute>();
-                var adjacentRoutes = GetAdjacentRoutes(currentNode, routes);
-
-                routesPerLevel.Add(level, (List<IRoute>)adjacentRoutes);
-
-                
-                foreach (var route in adjacentRoutes)
-                {
-                    //var visitedRoutes = GetVisitedRoutes(routesPerLevel);
-
-                    if (!visitedRoutes.Contains(route))
-                    {
-                        //visitedRoutes.Add(route);
-                        //BreadthFirstSearchRoute(route.Destination, end, routes, --maxNumberOfLevels);
-                        //BreadthFirstSearchRoute(route.Destination, end, routes);
-                        var nextroutes = BreadthFirstSearchRoutess(route.Destination, end, routes, level+1, numberOfLevels);
-                        foreach (var nextroutess in nextroutes)
-                        {
-                            if (routesPerLevel.Count > nextroutess.Key)
-                                routesPerLevel[level+1].AddRange(nextroutess.Value);
-                            else
-                                routesPerLevel.Add(level+1, nextroutess.Value);
-                        }
-                        queue.Enqueue(route.Destination);
-                    }
-                }
-
-                //need to add to a specific node.                                
-                //routesPerLevel = addRouteToLevel(visitedRoutes, level);
-                if (routesPerLevel.Count > level)
-                    routesPerLevel[level].AddRange(visitedRoutes);
-                else
-                    routesPerLevel.Add(level, visitedRoutes);   
-                    
-
-                ++level;
-            }
-
-            return routesPerLevel;
-        }
+        }        
 
         private static List<IRoute> GetVisitedRoutes(Dictionary<int, List<IRoute>> routesPerLevel)
         {
@@ -183,42 +136,11 @@ namespace TransportOperatorBusiness
                 a.AddRange(r);
             return a;
         }
-
-        //private static List<IEnumerable<IRoute>> addRouteToLevel(List<IRoute> visitedRoutes, int level)
-        //{
-        //    visitedRoutes[level] 
-        //}
-
-        public static IEnumerable<IRoute> BreadthFirstSearchRoute(IPort start, List<IRoute> routes)
-        {            
-            var visitedRoutes = new List<IRoute>();
-            var adjacentRoutes = GetAdjacentRoutes(start, routes);
-            foreach (var route in adjacentRoutes)
-            {
-                visitedRoutes.Add(route);                
-            }            
-            return visitedRoutes;
-        }
-
+        
         private static IEnumerable<IRoute> GetAdjacentRoutes(IPort port, List<IRoute> routes)
         {
             return routes.Where(n => n.Origin == port);
         }
-
-        //public static IEnumerable<IPort> BreadthFirstTopDownTraversal(IPort root, Func<IPort, IEnumerable<IPort>> children)
-        //{
-        //    var q = new Queue<IPort>();
-        //    q.Enqueue(root);
-        //    while (q.Count > 0)
-        //    {
-        //        IPort current = q.Dequeue();
-        //        yield return current;
-        //        foreach (var child in children(current))
-        //            q.Enqueue(child);
-        //    }
-        //}
-
-
 
         private static Dictionary<IPort, IEnumerable<IRoute>> GetAdjacentRoutesPerNode(IEnumerable<IRoute> routes)
         {            
@@ -229,23 +151,17 @@ namespace TransportOperatorBusiness
 
         public static int GetNumberOfRoutesBetweenPortsWithNumberOfStops(IPort source, IPort destination, List<IRoute> routes, int numberOfStops)
         {
-
-            var result = BreadthFirstSearchRoutesWithRepetition(source, routes, numberOfStops);
+            var result = BreadthFirstSearchRoutesWithPortRepetition(source, routes, numberOfStops);
 
             return result[numberOfStops].Count(r => r.Destination == destination);
-
-            //var adjacentNodes = GetAdjacentNodes(source, routes);
-            //Dictionary<IPort, LinkedList<IRoute>> routeDictionary;
-
-            //if (source == destination)
-            //    return null;
-            //else
-            //    routeDictionary = GetShortestRoutes(source, routes);
-
-            //return routeDictionary.Values.ToList().FindAll(r => r.Count == numberOfStops && r.Count > 0);
-
-
         }
+
+        public static int GetNumberOfRoutesBetweenPortsWithNumberOfStopsv2(IPort source, IPort destination, List<IRoute> routes, int numberOfStops)
+        {
+            var result = BreadthFirstSearchRoutesWithPortRepetitionv2(source,destination, routes, numberOfStops);
+            return result.Count(x => x.NumberOfStops().Equals(numberOfStops));
+        }
+        
 
         //private static List<IJourney> BreadthFirstSearchJourneysWithRepetition(IPort start, IPort end, int maxJourneyTime, List<IRoute> routes, IRouteRepository routeRepository)
         //{            
@@ -287,7 +203,7 @@ namespace TransportOperatorBusiness
         //}
 
 
-        private static Dictionary<int, List<IRoute>> BreadthFirstSearchRoutesWithRepetition(IPort start, List<IRoute> routes, int maxNumberOfLevels)
+        private static Dictionary<int, List<IRoute>> BreadthFirstSearchRoutesWithPortRepetition(IPort start, List<IRoute> routes, int maxNumberOfLevels)
         {
             var routesPerLevel = new Dictionary<int, List<IRoute>>();
             int level = 0;
@@ -297,11 +213,13 @@ namespace TransportOperatorBusiness
             while (queue.Count != 0)
             {
                 var currentNode = queue.Dequeue();
-                //if (maxNumberOfLevels == 0 || currentNode.Value == end)
-                if (maxNumberOfLevels == 0 && queue.Count == 0 || currentNode.Key > maxNumberOfLevels)
+                if (maxNumberOfLevels == 0 && queue.Count == 0)
                 {
                     return routesPerLevel;
                 }
+
+                if(currentNode.Key > maxNumberOfLevels)
+                    break;
 
                 var visitedRoutes = new List<IRoute>();
                 var adjacentRoutes = GetAdjacentRoutes(currentNode.Value, routes);
@@ -323,15 +241,87 @@ namespace TransportOperatorBusiness
             return routesPerLevel;
         }
 
-        //public static LinkedList<IRoute> GetShortestRoute(IPort source, IPort destination, IEnumerable<IRoute> routes)
-        //{
-        //    return GetShortestRoutes(source, destination, routes);
-        //}
-
-        public static List<List<IRoute>> CalculateShortestRoutesBetweenPortsWithMaxStopss(IPort source, IPort destination, IEnumerable<IRoute> routes, int numberOfStops)
+        public static List<IJourney> BreadthFirstSearchRoutesWithPortRepetitionv2(IPort start, IPort destination, List<IRoute> routes, int maxNumberOfStops)
         {
-            var routeDictionary = GetShortestRouteBetweenSelf(source, routes).ToList();
-            return null; //routeDictionary.ToList().FindAll(r => r.Count <= numberOfStops && r.Count > 0);
+            var portRepository = new PortRepository();
+            var routeRepository = new RouteRepository(portRepository);
+
+            var resultRoutes = new List<IJourney>();
+            IJourney journey = new Journey().WithPort(start);
+
+            var queue = new Queue<KeyValuePair<IJourney, IRoute>>();
+            queue.Enqueue(new KeyValuePair<IJourney, IRoute>(journey, new Route(null, start, 0)));
+            while (queue.Count != 0)
+            {
+                var currentNode = queue.Dequeue();
+
+                if (maxNumberOfStops == 0 && queue.Count == 0)
+                {
+                    return resultRoutes;
+                }
+
+                if (currentNode.Key.NumberOfStops() >= maxNumberOfStops)
+                    break;
+
+                var adjacentRoutes = GetAdjacentRoutes(currentNode.Value.Destination, routes);
+                foreach (var route in adjacentRoutes)
+                {                    
+                    var visitedjourney = (IJourney)currentNode.Key.Clone();
+                    visitedjourney.WithPort(route.Destination);
+
+                    if (route.Destination.Equals(destination))
+                    {
+                        resultRoutes.Add(visitedjourney);
+                    }
+                    else
+                    {
+                        queue.Enqueue(new KeyValuePair<IJourney, IRoute>(visitedjourney, route));
+                    }
+                }
+            }
+            return resultRoutes;
+        }
+
+        public static List<IJourney> BreadthFirstSearchRoutesWithPortRepetition(IPort start, IPort destination, List<IRoute> routes, int maxJourneyTime)
+        {
+            var portRepository = new PortRepository();
+            var routeRepository = new RouteRepository(portRepository);            
+
+            var resultRoutes = new List<IJourney>();
+            IJourney journey = new Journey().WithPort(start);
+
+            var queue = new Queue<KeyValuePair<IJourney, IRoute>>();
+            queue.Enqueue(new KeyValuePair<IJourney, IRoute>(journey, new Route(null, start, 0)));
+            while (queue.Count != 0)
+            {
+                var currentNode = queue.Dequeue();
+
+                if (maxJourneyTime == 0 && queue.Count == 0)
+                {
+                    return resultRoutes;
+                }
+
+                if (currentNode.Key.GetTime(routeRepository) > maxJourneyTime)
+                    break;
+
+                var adjacentRoutes = GetAdjacentRoutes(currentNode.Value.Destination, routes);
+                foreach (var route in adjacentRoutes)
+                {
+                    //got to do some clone...or copy...
+                    var visitedjourney = (IJourney)currentNode.Key.Clone();
+                    visitedjourney.WithPort(route.Destination);                    
+                    
+                    if (route.Destination.Equals(destination))
+                    {
+                        resultRoutes.Add(visitedjourney);
+                    }
+                    else
+                    {
+                        queue.Enqueue(new KeyValuePair<IJourney, IRoute>(visitedjourney, route));
+                    }
+                }            
+            }
+            return resultRoutes;
         }
 
         private static List<IRoute> GetShortestRoutes(IPort source, IPort destination, IEnumerable<IRoute> routes)
@@ -411,6 +401,7 @@ namespace TransportOperatorBusiness
             return routes.Where(p=>p.Destination.Equals(source)).Select(p=>p.Origin);
         }
 
+        //Refactor this to use a Queue?
         private static Dictionary<IPort, List<IRoute>> GetShortestRoutes(IPort source, IEnumerable<IRoute> routes)
         {
             //TODO rename Location with node to be generic                        
@@ -484,7 +475,7 @@ namespace TransportOperatorBusiness
         {
             return ShortestRoutes.OrderBy(p => p.Value.Key)
                                  .Select(p => p.Key).ToList();
-        }        
+        }
     }
 
     public static class ExtensionMethod
@@ -497,17 +488,5 @@ namespace TransportOperatorBusiness
             var completeRoute = routes == null ? new List<IRoute>() : new List<IRoute>(routes);
             dictionary[destination] = new KeyValuePair<int, List<IRoute>>(cost, completeRoute);
         }
-
-        //public static void Set(this Dictionary<int, List<IJourney>> dictionary, int level, IRoute route)
-        //{
-
-        //    if (dictionary.Count > level)
-        //        journeysPerLevel[currentNode.Key].AddRange(route);
-        //    else
-        //        journeysPerLevel.Add(currentNode.Key, visitedRoutes);
-
-        //    var completeRoute = routes == null ? new LinkedList<IRoute>() : new LinkedList<IRoute>(routes);
-        //    dictionary[destination] = new KeyValuePair<int, LinkedList<IRoute>>(cost, completeRoute);
-        //}
     }
 }

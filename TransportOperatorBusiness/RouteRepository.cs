@@ -42,12 +42,12 @@ namespace TransportOperatorBusiness
 
         public bool IsValidRoute(IPort portOrigin, IPort portDestination)
         {
-            return _routes.Exists(x => x.Origin == portOrigin && x.Destination == portDestination);
+            return _routes.Exists(x => x.Origin.Equals(portOrigin) && x.Destination.Equals(portDestination));
         }
 
         public int GetRouteTime(IPort portOrigin, IPort portDestination)
         {
-            return _routes.Find(x => x.Origin == portOrigin && x.Destination == portDestination).RouteTimeInDays;
+            return _routes.Find(x => x.Origin.Equals(portOrigin) && x.Destination.Equals(portDestination)).RouteTimeInDays;
         }
 
         private IPort GetPort(string portName)
