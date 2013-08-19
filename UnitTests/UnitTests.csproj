@@ -45,10 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlgorithTests.cs" />
     <Compile Include="JourneyTests.cs" />
     <Compile Include="RouteTests.cs" />
-    <Compile Include="Tests.cs" />
+    <Compile Include="TransportOperatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

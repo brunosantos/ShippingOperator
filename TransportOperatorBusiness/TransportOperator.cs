@@ -27,7 +27,7 @@ namespace TransportOperatorBusiness
 
         public int GetNumberOfRoutesBetweenPortsWithNumberOfStops(IPort source, IPort destination, int numberOfStops)
         {
-            var result = _graph.BreadthFirstSearchRoutesWithPortRepetitionLambda(source, destination, numberOfStops,
+            var result = _graph.BreadthFirstSearchRoutesWithPortRepetition(source, destination, numberOfStops,
                 (numberOfNodes, journey) => journey.NumberOfStops() >= numberOfNodes);
 
             return result.Count(x => x.NumberOfStops().Equals(numberOfStops));
@@ -35,14 +35,14 @@ namespace TransportOperatorBusiness
 
         public int GetNumberOfRoutesBetweenPortsWithMaximumNumberOfStops(IPort source, IPort destination, int maxNumberOfStops)
         {
-            List<IJourney<IPort>> result = _graph.BreadthFirstSearchRoutesWithPortRepetitionLambda(source, destination, maxNumberOfStops,
+            List<IJourney<IPort>> result = _graph.BreadthFirstSearchRoutesWithPortRepetition(source, destination, maxNumberOfStops,
                 (numberOfNodes, journey) => journey.NumberOfStops() >= numberOfNodes);
             return result.Count(x => x.NumberOfStops() <= maxNumberOfStops);
         }
 
         public int GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(IPort source, IPort destination, int maxJourneytime)
         {
-            var bfsRoutes = _graph.BreadthFirstSearchRoutesWithPortRepetitionLambda(source, destination, maxJourneytime,
+            var bfsRoutes = _graph.BreadthFirstSearchRoutesWithPortRepetition(source, destination, maxJourneytime,
                 (mTime, journey) => journey.GetTime(_routeRepository) >= mTime);
             return bfsRoutes.Count();
         }
@@ -53,8 +53,8 @@ namespace TransportOperatorBusiness
         }
 
         public int GetNumberOfRoutesBetweenPortsWithMaxJourneyTimeAsync(IPort source, IPort destination, int maxNumberOfStops)
-        {                    
-            Task<List<IJourney<IPort>>> breadthFirstSearchRoutesWithPortRepetitionLambdaAsyncResult = _graph.BreadthFirstSearchRoutesWithPortRepetitionLambdaAsync(source, destination, maxNumberOfStops,
+        {            
+            Task<List<IJourney<IPort>>> breadthFirstSearchRoutesWithPortRepetitionLambdaAsyncResult = _graph.BreadthFirstSearchRoutesWithPortRepetitionAsync(source, destination, maxNumberOfStops,
                 (numberOfNodes, journey) => journey.NumberOfStops() >= numberOfNodes);
 
             List<IJourney<IPort>> result = breadthFirstSearchRoutesWithPortRepetitionLambdaAsyncResult.Result;
