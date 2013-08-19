@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace TransportOperatorBusiness
 {
@@ -49,6 +50,15 @@ namespace TransportOperatorBusiness
         public IJourney<IPort> GetShortestRoute(IPort source, IPort destination)
         {
             return _graph.GetShortestRoute(source, destination);
+        }
+
+        public int GetNumberOfRoutesBetweenPortsWithMaxJourneyTimeAsync(IPort source, IPort destination, int maxNumberOfStops)
+        {                    
+            Task<List<IJourney<IPort>>> breadthFirstSearchRoutesWithPortRepetitionLambdaAsyncResult = _graph.BreadthFirstSearchRoutesWithPortRepetitionLambdaAsync(source, destination, maxNumberOfStops,
+                (numberOfNodes, journey) => journey.NumberOfStops() >= numberOfNodes);
+
+            List<IJourney<IPort>> result = breadthFirstSearchRoutesWithPortRepetitionLambdaAsyncResult.Result;
+            return result.Count(x => x.NumberOfStops() <= maxNumberOfStops);
         }
     }
 }

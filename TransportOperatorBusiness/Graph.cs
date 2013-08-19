@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace TransportOperatorBusiness
 {
@@ -217,6 +218,59 @@ namespace TransportOperatorBusiness
         {
             return shortestRoutes.OrderBy(p => p.Value.Key)
                                  .Select(p => p.Key).ToList();
+        }
+
+        public async Task<List<IJourney<TNode>>> BreadthFirstSearchRoutesWithPortRepetitionLambdaAsync(TNode start, TNode destination,
+            int maxNumberOfStops, Func<int, IJourney<TNode>, bool> journeyComparer)
+        {
+            var resultRoutes = new List<IJourney<TNode>>();
+            IJourney<TNode> journey = new Journey<TNode>().WithPort(start);
+
+            var queue = new Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>>();
+            queue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(journey, new Route<TNode>(default(TNode), start, 0)));
+            while (queue.Count != 0)
+            {
+                var currentNode = queue.Dequeue();
+
+                //could this scope be an async call !?!?
+                if (maxNumberOfStops == 0 && queue.Count == 0)
+                {
+                    return resultRoutes;
+                }
+
+                var currentjourney = currentNode.Key;
+                if (journeyComparer(maxNumberOfStops, currentjourney))
+                    break;
+
+                //this can be an async call.
+                await ProcessAdjacentRoutesAsync(destination, currentNode, resultRoutes, queue);
+            }
+            return resultRoutes;
+        }
+
+        private async Task ProcessAdjacentRoutesAsync(TNode destination, KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode,
+           List<IJourney<TNode>> resultRoutes, Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> queue)
+        {
+            var adjacentRoutes = GetAdjacentRoutes(currentNode.Value.Destination);
+            foreach (var route in adjacentRoutes)
+            {
+                var nextjourney = GetNextJourney(currentNode, route);
+
+                await ProcessJourneyAsync(destination, route, resultRoutes, nextjourney, queue);
+            }
+        }
+
+        private Task ProcessJourneyAsync(TNode destination, IRoute<TNode> route, List<IJourney<TNode>> resultRoutes, IJourney<TNode> nextjourney, Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> queue)
+        {
+            if (route.Destination.Equals(destination))
+            {
+                resultRoutes.Add(nextjourney);                
+            }
+            else
+            {
+                queue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(nextjourney, route));
+            }
+            return Task.FromResult(resultRoutes);
         }
     }
 

@@ -232,3 +232,15 @@ C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\nunit.framew
 C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
 C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.dll
 C:\Users\bsan\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\UnitTests.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\UnitTests.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\nunit.framework.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\FluentAssertions.xml
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\bin\Debug\nunit.framework.xml
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\UnitTests\obj\Debug\UnitTests.pdb

@@ -98,3 +98,8 @@ C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\bin\De
 C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
 C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
 C:\Users\bsan\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\bin\Debug\TransportOperatorBusiness.pdb
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.csprojResolveAssemblyReference.cache
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.dll
+C:\Users\bruno.santos\Documents\GitHub\ShippingOperator\TransportOperatorBusiness\obj\Debug\TransportOperatorBusiness.pdb

@@ -8,7 +8,6 @@ namespace UnitTests
     public class JourneyTests
     {
         private TransportOperator _transportOperator;
-        //private readonly RouteTests _routeTests = new RouteTests();
         private IPortRepository<IPort> _portRepository;
         private IRouteRepository<IPort> _routeRepository;
 
@@ -56,8 +55,6 @@ namespace UnitTests
             IPort portCapetown = _portRepository.GetPort("Cape Town");
 
             var journey = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portNy).WithPort(portLiverpool);
-            //var invalidjourney = new Journey(_routeRepository).WithPort(portBuenosAires).WithPort(portNy).WithPort(portCapetown);
-
             var journey2 = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCasablanca).WithPort(portLiverpool);
             var journey3 = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portNy).WithPort(portLiverpool).WithPort(portCasablanca);
             var invalidjourney = new Journey<IPort>().WithPort(portBuenosAires).WithPort(portCapetown).WithPort(portCasablanca);
