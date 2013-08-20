@@ -4,22 +4,24 @@ using System.Linq;
 
 namespace TransportOperatorBusiness
 {
-    //maybe the journey should have routes instead of ports. and should throw exception if route added was invalid?
-    //it would be easier to get totaltime because we wouldn't have to call repository for that...
     public class Journey<TNode> : IJourney<TNode>
     {
-        private List<TNode> _ports;
+        private readonly IRouteRepository<TNode> _routeRepository;
+        private List<TNode> _ports = new List<TNode>();
 
-        public Journey()
+        public Journey(IRouteRepository<TNode> routeRepository)
         {
-            _ports = new List<TNode>();
+            _routeRepository = routeRepository;
         }
-        public Journey(IRoute<TNode> route)
+
+        public Journey(IRoute<TNode> route, IRouteRepository<TNode> routeRepository)
+            : this(routeRepository)
         {
             _ports = new List<TNode>() { route.Origin, route.Destination };            
         }
 
-        public Journey(IEnumerable<IRoute<TNode>> route)
+        public Journey(IEnumerable<IRoute<TNode>> route, IRouteRepository<TNode> routeRepository)
+            : this(routeRepository)
         {
             _ports = route.Select(x => x.Origin).ToList();
         }
@@ -35,34 +37,29 @@ namespace TransportOperatorBusiness
             return this;
         }
 
-        public int GetTime(IRouteRepository<TNode> routeRepository)
+        public int GetTime()
         {
             //assume invalid journey time is 0
             int tcount = 0;
-            if (IsValid(routeRepository))
+            if (IsValid())
             {
                 //TODO Refactor This -should I look twice?!?! what about single responsibility?
                 for (int i = 0; i < Ports.Count - 1; ++i)
                 {
-                    tcount += GetTime(Ports[i], Ports[i + 1], routeRepository);
+                    tcount += _routeRepository.GetRouteTime(Ports[i], Ports[i + 1]);
                 }
             }
             return tcount;
         }
 
-        private int GetTime(TNode portOrigin, TNode portDestination, IRouteRepository<TNode> routeRepository)
-        {
-            return routeRepository.GetRouteTime(portOrigin, portDestination);
-        }
-
-        public bool IsValid(IRouteRepository<TNode> routeRepository)
+        public bool IsValid()
         {
             if (HasMoreThanTwoPorts())
             {
                 //TODO Refactor This
                 for (int i = 0; i < Ports.Count - 1; ++i)
                 {
-                    if (!IsValid(Ports[i], Ports[i + 1], routeRepository))
+                    if (!IsValid(Ports[i], Ports[i + 1]))
                         return false;
                 }
             }
@@ -81,16 +78,16 @@ namespace TransportOperatorBusiness
             return Ports.Count >= 2;
         }
 
-        private bool IsValid(TNode portOrigin, TNode portDestination, IRouteRepository<TNode> routeRepository)
+        private bool IsValid(TNode portOrigin, TNode portDestination)
         {
             //can whe find a route that matches this?
             //it would be nice if I could just create a route and do contains on routes...
-            return routeRepository.IsValidRoute(portOrigin, portDestination);
+            return _routeRepository.IsValidRoute(portOrigin, portDestination);
         }
 
         public object Clone()
         {
-            var clone = new Journey<TNode> { _ports = new List<TNode>() };
+            var clone = new Journey<TNode>(_routeRepository) { _ports = new List<TNode>() };
             foreach (var port in Ports)
                 clone.Ports.Add(port);
             

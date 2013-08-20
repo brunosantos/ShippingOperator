@@ -43,7 +43,7 @@ namespace TransportOperatorBusiness
         public int GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(IPort source, IPort destination, int maxJourneytime)
         {
             var bfsRoutes = _graph.BreadthFirstSearchRoutesWithPortRepetition(source, destination, maxJourneytime,
-                (mTime, journey) => journey.GetTime(_routeRepository) >= mTime);
+                (mTime, journey) => journey.GetTime() >= mTime);
             return bfsRoutes.Count();
         }
 

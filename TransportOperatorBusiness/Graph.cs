@@ -8,8 +8,8 @@ namespace TransportOperatorBusiness
 {
     public class Graph<TNode>
     {
-        private IRouteRepository<TNode> _routeRepository;
-        private List<IRoute<TNode>> _routes;
+        private readonly IRouteRepository<TNode> _routeRepository;
+        private readonly List<IRoute<TNode>> _routes;
 
         public Graph(IRouteRepository<TNode> routeRepository)
         {            
@@ -36,7 +36,7 @@ namespace TransportOperatorBusiness
         public int GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(TNode source, TNode destination, int maxJourneytime)
         {
             var bfsRoutes = BreadthFirstSearchRoutesWithPortRepetition(source, destination, maxJourneytime,
-                (mTime, journey) => journey.GetTime(_routeRepository) >= mTime);
+                (mTime, journey) => journey.GetTime() >= mTime);
             return bfsRoutes.Count();
         }
 
@@ -50,7 +50,7 @@ namespace TransportOperatorBusiness
         public List<IJourney<TNode>> BreadthFirstSearchRoutesWithPortRepetition(TNode start, TNode destination,
             int maxNumberOfStops, Func<int, IJourney<TNode>, bool> journeyComparer)
         {
-            IJourney<TNode> journey = new Journey<TNode>().WithPort(start);
+            IJourney<TNode> journey = new Journey<TNode>(_routeRepository).WithPort(start);
                  
             var status = new BreadthFirstSearchRoutesStatus<TNode>
                              {
@@ -138,7 +138,7 @@ namespace TransportOperatorBusiness
                 var currentRoute = routeDictionary[node];
 
                 if ((currentRoute.NumberOfStops() > 0 && shortestJourney == null) ||
-                    shortestJourney != null && shortestJourney.GetTime(_routeRepository) > currentRoute.GetTime(_routeRepository))
+                    shortestJourney != null && shortestJourney.GetTime() > currentRoute.GetTime())
                 {                    
                     currentRoute.WithPort(source);
                     shortestJourney = currentRoute.Clone() as IJourney<TNode>;
@@ -162,7 +162,7 @@ namespace TransportOperatorBusiness
             SetInfinityToAllRoutes(shortestRoutes);
 
             // update cost for self-to-self as 0; no Route            
-            shortestRoutes.Set(source, 0, new Journey<TNode>().WithPort(source));
+            shortestRoutes.Set(source, 0, new Journey<TNode>(_routeRepository).WithPort(source), _routeRepository);
 
             var locationCount = shortestRoutes.Keys.Count;
 
@@ -179,7 +179,7 @@ namespace TransportOperatorBusiness
                     if (shortestRoutes[route.Destination].Key > route.RouteTimeInDays + shortestRoutes[route.Origin].Key)
                     {                        
                         var journey = ((IJourney<TNode>)shortestRoutes[route.Origin].Value.Clone()).WithPort(route.Destination);
-                        shortestRoutes.Set(route.Destination, route.RouteTimeInDays + shortestRoutes[route.Origin].Key,journey);
+                        shortestRoutes.Set(route.Destination, route.RouteTimeInDays + shortestRoutes[route.Origin].Key, journey, _routeRepository);
                     }
                 }
                 locationsProcessed.Add(locationToProcess);
@@ -191,7 +191,7 @@ namespace TransportOperatorBusiness
         {
             _routes.SelectMany(p => new TNode[] { p.Origin, p.Destination })
                   .ToList()
-                  .ForEach(s => shortestRoutes.Set(s, Infinity, null));
+                  .ForEach(s => shortestRoutes.Set(s, Infinity, null, _routeRepository));
         }
 
         private TNode GetLocationToProcess(Dictionary<TNode, KeyValuePair<int, IJourney<TNode>>> shortestRoutes, List<TNode> locationsProcessed)
@@ -223,7 +223,7 @@ namespace TransportOperatorBusiness
         public async Task<List<IJourney<TNode>>> BreadthFirstSearchRoutesWithPortRepetitionAsync(TNode start, TNode destination,
             int maxNumberOfStops, Func<int, IJourney<TNode>, bool> journeyComparer)
         {
-            IJourney<TNode> journey = new Journey<TNode>().WithPort(start);
+            IJourney<TNode> journey = new Journey<TNode>(_routeRepository).WithPort(start);
                  
             var status = new BreadthFirstSearchRoutesStatus<TNode>
                              {
@@ -248,10 +248,8 @@ namespace TransportOperatorBusiness
                     break;
 
                 status = await ProcessAdjacentRoutesAsync(destination, currentNode, status);                
-                //ProcessAdjacentRoutesParallel(destination, currentNode, resultRoutes, queue);
             }
             return status.ResultJourneys;
-            //return resultRoutes;
         }
 
         private async Task<BreadthFirstSearchRoutesStatus<TNode>> ProcessAdjacentRoutesAsync(TNode destination, KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode,
@@ -279,9 +277,9 @@ namespace TransportOperatorBusiness
 
     internal static class ExtensionMethod
     {
-        public static void Set<TNode>(this Dictionary<TNode, KeyValuePair<int, IJourney<TNode>>> dictionary, TNode destination, int cost, IJourney<TNode> journey)
+        public static void Set<TNode>(this Dictionary<TNode, KeyValuePair<int, IJourney<TNode>>> dictionary, TNode destination, int cost, IJourney<TNode> journey, IRouteRepository<TNode> routeRepository)
         {
-            var completeRoute = journey ?? new Journey<TNode>();
+            var completeRoute = journey ?? new Journey<TNode>(routeRepository);
             dictionary[destination] = new KeyValuePair<int, IJourney<TNode>>(cost, completeRoute);
         }
     }
