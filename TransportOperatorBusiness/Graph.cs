@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace TransportOperatorBusiness
@@ -41,6 +42,7 @@ namespace TransportOperatorBusiness
 
         private IEnumerable<IRoute<TNode>> GetAdjacentRoutes(TNode port)
         {
+            //Task.Delay(500);
             var x =_routes.Where(n => n.Origin.Equals(port));
             return x;
         }
@@ -48,19 +50,24 @@ namespace TransportOperatorBusiness
         public List<IJourney<TNode>> BreadthFirstSearchRoutesWithPortRepetition(TNode start, TNode destination,
             int maxNumberOfStops, Func<int, IJourney<TNode>, bool> journeyComparer)
         {
-            var resultRoutes = new List<IJourney<TNode>>();
             IJourney<TNode> journey = new Journey<TNode>().WithPort(start);
+                 
+            var status = new BreadthFirstSearchRoutesStatus<TNode>
+                             {
+                                 NodeToProcessQueue = new Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>>(), 
+                                 ResultJourneys = new List<IJourney<TNode>>()
+                             };
 
-            var queue = new Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>>();
-            queue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(journey, new Route<TNode>(default(TNode), start, 0)));
-            while (queue.Count != 0)
+            status.NodeToProcessQueue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(journey, new Route<TNode>(default(TNode), start, 0)));
+
+            while (status.NodeToProcessQueue.Count != 0)
             {
-                var currentNode = queue.Dequeue();
+                var currentNode = status.NodeToProcessQueue.Dequeue();
 
                 //could this scope be an async call !?!?
-                if (maxNumberOfStops == 0 && queue.Count == 0)
+                if (maxNumberOfStops == 0 && status.NodeToProcessQueue.Count == 0)
                 {
-                    return resultRoutes;
+                    return status.ResultJourneys;
                 }
 
                 var currentjourney = currentNode.Key;
@@ -68,34 +75,38 @@ namespace TransportOperatorBusiness
                     break;
 
                 //this can be an async call.
-                ProcessAdjacentRoutes(destination, currentNode, resultRoutes, queue);
+                status = ProcessAdjacentRoutes(destination, currentNode, status);
             }
-            return resultRoutes;
+            return status.ResultJourneys;
         }
 
-        private void ProcessAdjacentRoutes(TNode destination, KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode,
-            List<IJourney<TNode>> resultRoutes, Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> queue)
+        private BreadthFirstSearchRoutesStatus<TNode> ProcessAdjacentRoutes(TNode destination, KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode,
+            BreadthFirstSearchRoutesStatus<TNode> status)
         {
-            var adjacentRoutes = GetAdjacentRoutes(currentNode.Value.Destination);
+            var adjacentRoutes = GetAdjacentRoutes(currentNode.Value.Destination);            
             foreach (var route in adjacentRoutes)
             {
                 var nextjourney = GetNextJourney(currentNode, route);
-
-                ProcessJourney(destination, route, resultRoutes, nextjourney, queue);
+                status=ProcessRoute(destination, route, nextjourney, status);
             }
+            return status;
         }
 
-
-        private void ProcessJourney(TNode destination, IRoute<TNode> route, List<IJourney<TNode>> resultRoutes, IJourney<TNode> nextjourney, Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> queue)
+        private BreadthFirstSearchRoutesStatus<TNode> ProcessRoute(TNode destination, IRoute<TNode> route, IJourney<TNode> nextjourney, BreadthFirstSearchRoutesStatus<TNode> status)
         {
+            //for testing purposes.
+            //to prove that async is faster only if the proccess is slower.
+            //Task.Delay(500);
             if (route.Destination.Equals(destination))
             {
-                resultRoutes.Add(nextjourney);
+                status.ResultJourneys.Add(nextjourney);
             }
             else
             {
-                queue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(nextjourney, route));
+                status.NodeToProcessQueue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(nextjourney, route));
             }
+
+            return status;
         }
 
         private IJourney<TNode> GetNextJourney(KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode, IRoute<TNode> route)
@@ -212,61 +223,61 @@ namespace TransportOperatorBusiness
         public async Task<List<IJourney<TNode>>> BreadthFirstSearchRoutesWithPortRepetitionAsync(TNode start, TNode destination,
             int maxNumberOfStops, Func<int, IJourney<TNode>, bool> journeyComparer)
         {
-            var resultRoutes = new List<IJourney<TNode>>();
             IJourney<TNode> journey = new Journey<TNode>().WithPort(start);
+                 
+            var status = new BreadthFirstSearchRoutesStatus<TNode>
+                             {
+                                 NodeToProcessQueue = new Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>>(), 
+                                 ResultJourneys = new List<IJourney<TNode>>()
+                             };
 
-            var queue = new Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>>();
-            queue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(journey, new Route<TNode>(default(TNode), start, 0)));
-            while (queue.Count != 0)
+            status.NodeToProcessQueue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(journey, new Route<TNode>(default(TNode), start, 0)));
+            
+            while (status.NodeToProcessQueue.Count != 0)
             {
-                var currentNode = queue.Dequeue();
+                var currentNode = status.NodeToProcessQueue.Dequeue();
 
                 //could this scope be an async call !?!?
-                if (maxNumberOfStops == 0 && queue.Count == 0)
+                if (maxNumberOfStops == 0 && status.NodeToProcessQueue.Count == 0)
                 {
-                    return resultRoutes;
+                    return status.ResultJourneys;
                 }
 
                 var currentjourney = currentNode.Key;
                 if (journeyComparer(maxNumberOfStops, currentjourney))
                     break;
 
-                //this can be an async call.
-                await ProcessAdjacentRoutesAsync(destination, currentNode, resultRoutes, queue);                
+                status = await ProcessAdjacentRoutesAsync(destination, currentNode, status);                
+                //ProcessAdjacentRoutesParallel(destination, currentNode, resultRoutes, queue);
             }
-            return resultRoutes;
+            return status.ResultJourneys;
+            //return resultRoutes;
         }
 
-        private async Task ProcessAdjacentRoutesAsync(TNode destination, KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode,
-           List<IJourney<TNode>> resultRoutes, Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> queue)
+        private async Task<BreadthFirstSearchRoutesStatus<TNode>> ProcessAdjacentRoutesAsync(TNode destination, KeyValuePair<IJourney<TNode>, IRoute<TNode>> currentNode,
+            BreadthFirstSearchRoutesStatus<TNode> status)
         {
             var adjacentRoutes = GetAdjacentRoutes(currentNode.Value.Destination);
-            foreach (var route in adjacentRoutes)
+
+            Parallel.ForEach(adjacentRoutes, route =>
             {
                 var nextjourney = GetNextJourney(currentNode, route);
-                //use yeld return??
-                await ProcessJourneyAsync(destination, route, resultRoutes, nextjourney, queue);                
-            }            
-        }
+                status = ProcessRoute(destination, route, nextjourney, status);
 
-        private void ProcessJourneyAsync(TNode destination, IRoute<TNode> route, List<IJourney<TNode>> resultRoutes, IJourney<TNode> nextjourney, Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> queue)
-        {
-            if (route.Destination.Equals(destination))
-            {
-                resultRoutes.Add(nextjourney);
-            }
-            else
-            {
-                queue.Enqueue(new KeyValuePair<IJourney<TNode>, IRoute<TNode>>(nextjourney, route));
-            }
+            });
 
-            //await Task.Delay(5000);
-            //return 1;
-            //return resultRoutes;
+            return status;
         }
     }
 
-    public static class ExtensionMethod
+    internal class BreadthFirstSearchRoutesStatus<TNode>
+    {
+        public Queue<KeyValuePair<IJourney<TNode>, IRoute<TNode>>> NodeToProcessQueue { get; set; }
+
+        public List<IJourney<TNode>> ResultJourneys { get; set; }
+    }
+
+    internal static class ExtensionMethod
     {
         public static void Set<TNode>(this Dictionary<TNode, KeyValuePair<int, IJourney<TNode>>> dictionary, TNode destination, int cost, IJourney<TNode> journey)
         {

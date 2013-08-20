@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NUnit.Framework;
@@ -129,8 +130,9 @@ namespace UnitTests
         public void ShouldGetNumberOfJourneysFromLiverpoolToLiverpoolWithJourneyTimeEqualOrLessThanTwentyFive()
         {
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
+            var time = DateTime.Now;
             var results = _transportOperator.GetNumberOfRoutesBetweenPortsWithMaxJourneyTime(portLiverpool, portLiverpool, 25);
-
+            Assert.That(DateTime.Now - time, Is.EqualTo(3));
             Assert.That(results, Is.EqualTo(3));
         }
 
@@ -139,29 +141,12 @@ namespace UnitTests
         public void ShouldGetNumberOfJourneysFromLiverpoolToLiverpoolWithJourneyTimeEqualOrLessThanTwentyFiveAsync()
         {
             IPort portLiverpool = _portRepository.GetPort("Liverpool");
-            var results = _transportOperator.GetNumberOfRoutesBetweenPortsWithMaxJourneyTimeAsync(portLiverpool, portLiverpool, 25);
+            var time = DateTime.Now;
+            var results = _transportOperator.GetNumberOfRoutesBetweenPortsWithMaxJourneyTimeAsync(portLiverpool,
+                                                                                                  portLiverpool, 25);
 
+            Assert.That(DateTime.Now - time, Is.EqualTo(3));
             Assert.That(results, Is.EqualTo(3));
-        
-
-         Task<int> theTask = ProcessAsync();
-        int x = 0;  // set breakpoint
-            x = theTask.Result;
-            int y = 1234;
-        }
-
-        async Task<int> ProcessAsync()
-        {
-            var result = await DoSomethingAsync();  // set breakpoint 
-
-            int y = 0;  // set breakpoint
-            return y;
-        }
-
-        static async Task<int> DoSomethingAsync()
-        {
-            await Task.Delay(1000);
-            return 5;
         }
     }
 }
