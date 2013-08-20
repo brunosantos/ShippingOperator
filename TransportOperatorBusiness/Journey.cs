@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using TransportOperatorBusiness.Repositories;
 
 namespace TransportOperatorBusiness
 {
@@ -17,7 +17,7 @@ namespace TransportOperatorBusiness
         public Journey(IRoute<TNode> route, IRouteRepository<TNode> routeRepository)
             : this(routeRepository)
         {
-            _ports = new List<TNode>() { route.Origin, route.Destination };            
+            _ports = new List<TNode>() { route.Origin, route.Destination };
         }
 
         public Journey(IEnumerable<IRoute<TNode>> route, IRouteRepository<TNode> routeRepository)
@@ -40,37 +40,34 @@ namespace TransportOperatorBusiness
         public int GetTime()
         {
             //assume invalid journey time is 0
-            int tcount = 0;
-            if (IsValid())
+            int accumulatedTime = 0;
+
+            for (int i = 0; i < Ports.Count - 1; ++i)
             {
-                //TODO Refactor This -should I look twice?!?! what about single responsibility?
-                for (int i = 0; i < Ports.Count - 1; ++i)
-                {
-                    tcount += _routeRepository.GetRouteTime(Ports[i], Ports[i + 1]);
-                }
+                if (!IsValid(Ports[i], Ports[i + 1]))
+                    return 0;
+                accumulatedTime += _routeRepository.GetRouteTime(Ports[i], Ports[i + 1]);
             }
-            return tcount;
+
+            return accumulatedTime;
         }
 
         public bool IsValid()
         {
             if (HasMoreThanTwoPorts())
             {
-                //TODO Refactor This
                 for (int i = 0; i < Ports.Count - 1; ++i)
                 {
                     if (!IsValid(Ports[i], Ports[i + 1]))
                         return false;
                 }
             }
-
-            //is a journey with only one port valid?
             return true;
         }
 
         public int NumberOfStops()
         {
-            return Ports.Count == 0 ? 0 : Ports.Count-1;
+            return Ports.Count == 0 ? 0 : Ports.Count - 1;
         }
 
         private bool HasMoreThanTwoPorts()
@@ -80,8 +77,6 @@ namespace TransportOperatorBusiness
 
         private bool IsValid(TNode portOrigin, TNode portDestination)
         {
-            //can whe find a route that matches this?
-            //it would be nice if I could just create a route and do contains on routes...
             return _routeRepository.IsValidRoute(portOrigin, portDestination);
         }
 
@@ -90,7 +85,7 @@ namespace TransportOperatorBusiness
             var clone = new Journey<TNode>(_routeRepository) { _ports = new List<TNode>() };
             foreach (var port in Ports)
                 clone.Ports.Add(port);
-            
+
             return clone;
         }
     }
